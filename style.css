@@ -1,0 +1,112 @@
+body, html{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#ffa328, #ff6e7f, #bfe9ff);
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.wall-clock{
+    width: 30rem;
+    height: 30rem;
+    background: darkcyan;
+    border: 7px solid darkcyan;
+    border-radius: 50%;
+    position: relative;
+    padding: 2rem;
+    box-shadow: 0 20px 30px #684b6aa6;
+}
+.external-wall-clock-face{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #fefefc;
+    border-radius: 100%;
+    box-shadow: 0 20px 10px #3e2f3f73;
+    overflow: hidden;
+}
+.external-wall-clock-face::after{
+    transform: rotate(90deg);
+}
+.external-wall-clock-face::before,
+.external-wall-clock-face::after,
+.external-wall-clock-face .time{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #b8b8c5;
+    z-index: 0;
+    left: 49%;
+}
+.external-wall-clock-face .time{
+    background: #bdbdcb;
+    width: 3px;
+}
+.external-wall-clock-face .notch-one{
+    transform: rotate(30deg);
+}
+.external-wall-clock-face .notch-two{
+    transform: rotate(60deg);
+}
+.external-wall-clock-face .notch-three{
+    transform: rotate(120deg);
+}
+.external-wall-clock-face .notch-four{
+    transform: rotate(150deg);
+}
+.internal-wall-clock-face{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background: #fefefc;
+    border-radius: 100%;
+    z-index: 1;
+}
+.internal-wall-clock-face::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    border-radius: 18px;
+    margin-left: -9px;
+    margin-top: -6px;
+    background: #4d4b63;
+    z-index: 11;
+
+}
+.clock-pointer{
+    width: 50%;
+    right: 50%;
+    height: 6px;
+    background: #61afff;
+    position: absolute;
+    top: 50%;
+    border-radius: 6px;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition-timing-function: cubic-bezier(0.1,2.7,0.58,1);
+}
+.clock-pointer.hour-pointer{
+    width: 20%;
+    z-index: 3;
+}
+.clock-pointer.min-pointer{
+    height: 3px;
+    z-index: 10;
+    width: 35%;
+}
+.clock-pointer.second-pointer{
+    width: 40%;
+    background: powderblue;
+}
